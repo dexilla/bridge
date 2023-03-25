@@ -1,15 +1,16 @@
-import "../styles/global.css";
-import "@rainbow-me/rainbowkit/styles.css";
-import type { AppProps } from "next/app";
 import {
-  RainbowKitProvider,
-  getDefaultWallets,
   connectorsForWallets,
+  getDefaultWallets,
+  RainbowKitProvider,
 } from "@rainbow-me/rainbowkit";
+import "@rainbow-me/rainbowkit/styles.css";
 import { argentWallet, trustWallet } from "@rainbow-me/rainbowkit/wallets";
-import { createClient, configureChains, WagmiConfig, goerli } from "wagmi";
-import { avalancheFuji, Chain, sepolia } from "wagmi/chains";
+import type { AppProps } from "next/app";
+import { configureChains, createClient, WagmiConfig } from "wagmi";
+import { Chain, sepolia } from "wagmi/chains";
 import { publicProvider } from "wagmi/providers/public";
+import "../styles/global.css";
+import "./global.css";
 
 export const dexillaSepolia: Chain = {
   id: 1_954,

@@ -3,8 +3,8 @@ import { BigNumber, ethers } from "ethers";
 import React, { useEffect, useState } from "react";
 import { useSigner } from "wagmi";
 import {
-  L1StandardBridge__factory,
   L1StandardBridge,
+  L1StandardBridge__factory,
 } from "../../types/ethers-contracts";
 
 const L1_STANDARD_BRIDGE_ADDRESS = "0x08a5A1BfE0814D74cf14a68A5ecec05eEeB655e8";
@@ -69,18 +69,23 @@ export default function NativeTokenBridge() {
     <div>
       <h1>Bridge Native Token</h1>
 
-      <ConnectButton />
+      <div className="relative mt-2 rounded-md shadow-sm">
+        <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+          <ConnectButton />
+        </div>
+      </div>
 
       <label>
-        L1 Standard Bridge Address:{" "}
+        L1 Standard Bridge Address{" "}
         <input
+          hidden
           type="text"
           value={bridgeAddress}
           onChange={handleBridgeAddressChange}
         />
       </label>
-
-      <hr />
+      <div>{bridgeAddress}</div>
+      <br></br>
 
       <label>
         Amount:{" "}
